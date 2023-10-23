@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import One from "./Components/One";
+import Nav from "./Components/Nav";
+import Two from "./Components/Two";
+import Three from "./Components/Three";
+import Four from "./Components/Four";
+import Five from "./Components/Five";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<One />} />
+        <Route path="/two" element={<Two />} />
+        <Route path="/three" element={<Three />} />
+        <Route path="/four" element={<Four />} />
+        <Route path="/five" element={<Five/>} />
+
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
